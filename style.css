@@ -1,0 +1,488 @@
+/* basic tags and styling practice */
+
+.cover img {
+  object-fit: cover;
+}
+
+.contain img {
+  object-fit: contain;
+}
+
+.fill img {
+  object-fit: fill;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #333;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 20px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.hero-text button {
+  padding: 12px 25px;
+  background-color: #15508a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* HOVER EFFECT */
+.hero-text button:hover {
+  background-color: #0d3c6e;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* question 2 */
+
+.image-comparison {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.box {
+  flex: 1;
+  text-align: center;
+}
+
+.box img {
+  width: 100%;
+  height: 200px;
+  border: 2px solid #333;
+}
+
+/* DIFFERENCE HERE 👇 */
+
+.box:nth-child(1) img {
+  object-fit: cover;
+}
+
+.box:nth-child(2) img {
+  object-fit: contain;
+}
+
+.box:nth-child(3) img {
+  object-fit: fill;
+}
+/* 
+.cover img {
+  object-fit: cover;
+}
+
+.contain img {
+  object-fit: contain;
+}
+
+.fill img {
+  object-fit: fill;
+} */
+
+
+
+/* Container */
+.carousel-wrap {
+  text-align: center;
+  padding: 30px;
+}
+
+/* Outer frame (hides overflow) */
+#question{
+    text-align: center;
+}
+.carousel {
+  width: 300px;
+  overflow: hidden;
+  margin: auto;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+/* Slides row */
+.slides {
+  display: flex;
+  width: 900px; /* 3 slides × 300px */
+  animation: slide 6s infinite;
+}
+
+/* Each slide */
+.slide {
+  width: 300px;
+  padding: 40px;
+  font-size: 20px;
+  background: #f4f4f4;
+  border-right: 1px solid #ccc;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-300px); }
+  66%  { transform: translateX(-600px); }
+  100% { transform: translateX(0); }
+}
+
+.carousel:hover .slides {
+  animation-play-state: paused;
+}
+
+
+
+/* Layout */
+.promo-ui {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* BUTTON */
+.promo-btn {
+  padding: 12px 20px;
+  background: #15508a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.promo-btn:hover {
+  background: #0d3c6e;
+  transform: scale(1.05);
+}
+
+/* CARD */
+.promo-card {
+  margin: 20px auto;
+  width: 200px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+}
+
+/* Card hover */
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+/* css loader  question 2*/
+.promo-loader {
+  width: 20px;
+  height: 20px;
+  margin: 30px auto;
+  background: #15508a;
+  border-radius: 50%;
+
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* PAGE LAYOUT GRID */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+
+  min-height: 100vh;
+}
+
+/* AREAS */
+.shop-header {
+  grid-area: header;
+  background: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.shop-sidebar {
+  grid-area: sidebar;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.shop-main {
+  grid-area: main;
+  padding: 20px;
+}
+
+.shop-footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+
+
+
+
+/* CSS (Grid Layout for Page + Products) */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* PAGE LAYOUT GRID */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+
+  min-height: 100vh;
+}
+
+/* AREAS */
+.shop-header {
+  grid-area: header;
+  background: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.shop-sidebar {
+  grid-area: sidebar;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.shop-main {
+  grid-area: main;
+  padding: 20px;
+}
+
+.shop-footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+/* PRODUCT GRID (inside main) */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.product-card {
+  background: #eee;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+
+  transition: 0.3s;
+}
+
+/* hover effect */
+.product-card:hover {
+  transform: translateY(-5px);
+  background: #ddd;
+}
+
+/* question 2 */
+@media (max-width: 768px) {
+
+  /* STACK PAGE */
+  .shop-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+  /* PRODUCT GRID SINGLE COLUMN */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-sidebar {
+    text-align: center;
+  }
+}
+
+
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #333;
+  color: white;
+}
+
+.portfolio-header nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* HERO */
+.portfolio-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f4f4f4;
+}
+
+.portfolio-hero h2 {
+  margin-bottom: 10px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* CARDS */
+.card {
+  background: #eee;
+  padding: 20px;
+  margin: 10px auto;
+  width: 80%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  background: #ddd;
+}
+
+/* NAV HOVER */
+.portfolio-header nav a:hover {
+  color: #00bcd4;
+}
+
+
+/* question 2 */
+@media (max-width: 768px) {
+
+  .portfolio-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .portfolio-header nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .card {
+    width: 95%;
+  }
+}
